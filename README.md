@@ -4,6 +4,11 @@
 <img src="https://img.shields.io/github/stars/Rdimo/Discord-Webhook-Protector?color=444444&label=Stars&style=flat-square" </a>
 <img src="https://img.shields.io/github/forks/Rdimo/Discord-Webhook-Protector?color=444444&label=Forks&style=flat-square" </a>
 </p>
+</p>
+<p align="center">
+<a href="https://github.com/Rdimo/Discord-Webhook-Protector#setting-up-the-api">Setup the api</a> ⋮
+<a href="https://cheataway.com">Discord</a>
+</p>
 
 #### Discord-Webhook-Protector was made by
 Love ❌ code ✅
@@ -75,4 +80,4 @@ $ heroku open
 ```
 
 ### 📜・ Upcoming features
-* File upload support
+* File upload support (prob not in a while tho since im too lazy)
