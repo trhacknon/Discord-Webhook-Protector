@@ -24,6 +24,7 @@ Love ❌ code ✅
 ```
 
 ### 🎈・Code example
+Example of a grabber you can use the api for
 ```py
 import os, re
 import requests
