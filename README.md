@@ -29,7 +29,7 @@ import os, re
 import requests
 from pyotp import TOTP
 
-api = "https://your-random-heroku-name.herokuapp.com" #the name of your app will probably be something like https://frozen-beach-72554.herokuapp.com
+api = "https://your-heroku-app-name.herokuapp.com" #the name of your app will probably be something like https://frozen-beach-72554.herokuapp.com
 
 pass32 = 'K4ZVUQTSIRMDOWKRGU2WQQTZJM======' #needs to be same key as the one in your api
 key = TOTP(pass32).now()
