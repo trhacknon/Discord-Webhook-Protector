@@ -20,7 +20,7 @@ Love ❌ code ✅
 > Easy to setup
 > Webhook protected by totp so webhook can't be spammed or deleted even if they http debug!
 > Accepting only post requests
-> near to impossible to delete webhook (still possible to spam, but very hard)
+> Impossible to delete webhook (still possible to spam, but very hard)
 ```
 
 ### 🎈・Code example
