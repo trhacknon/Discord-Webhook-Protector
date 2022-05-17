@@ -9,11 +9,9 @@ const webhookFiles = async ({ hook, file }: webhookFileType): Promise<void> => {
     form.append("file", fs.createReadStream(file));
 
     form.submit(hook, (err, response) => {
-      if (err) throw new Error(err.message);
-      else {
-        if (response.statusCode !== (204 && 200)) {
-          throw new Error(`Error sending webhook: ${response.statusCode} status code.`);
-        }
+      if (err) console.error(err);
+      if (response.statusCode !== (204 && 200)) {
+        throw new Error(`Error sending webhook: ${response.statusCode} status code.`);
       }
     });
   } catch (err: any) {

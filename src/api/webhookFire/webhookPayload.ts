@@ -13,6 +13,7 @@ const webhookPayload = async ({ hook, payload }: webhookPayloadType): Promise<vo
       },
     });
     if (res.status == 429) {
+      //if we get ratelimited we just try to send again after the ratelimit
       const data: any = await res.json();
       const waitUntil = data.retry_after;
       setTimeout(() => webhookPayload({ hook, payload }), waitUntil);

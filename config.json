@@ -1,6 +1,6 @@
 {
   "webhook": "",
   "pass32": "K4ZVUQTSIRMDOWKRGU2WQQTZJM======",
-  "rateLimitTimeout": 12000,
+  "rateLimitTimeout": 30000,
   "port": 3000
 }

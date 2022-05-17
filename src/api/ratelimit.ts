@@ -9,9 +9,8 @@ export default class RateLimit implements rateLimit {
   ip: string;
   limit: Set<string>;
   constructor(ip: string) {
-    this.ip = ip;
+    this.ip = ip === "::1" ? "127.0.0.1" : ip;
     this.limit = new Set();
-    if (this.ip === "127.0.0.1" || this.ip === "::1") return;
   }
   public exist() {
     /**
@@ -24,15 +23,14 @@ export default class RateLimit implements rateLimit {
   }
   public timeout() {
     /**
-     * ratelimit ip and remove ratelimit after 12 seconds
+     * sets a rateLimitTimeout or 30 sec ratelimit on the ip
      *
      * @returns {void}
      */
-    //ratelimit ip and remove ratelimit after 12 seconds
     this.limit.add(this.ip);
     console.log(`ratelimited ${this.ip}`);
     setTimeout(() => {
       this.limit.delete(this.ip);
-    }, rateLimitTimeout || 12000);
+    }, rateLimitTimeout || 30000);
   }
 }
