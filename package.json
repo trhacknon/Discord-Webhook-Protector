@@ -2,18 +2,23 @@
   "name": "discord-webhook-protector",
   "version": "1.0.0",
   "description": "",
-  "main": "api.js",
+  "main": "dist/index.js",
+  "type": "module",
   "scripts": {
-    "start": "node api.js"
+    "start": "tsc & node --experimental-specifier-resolution=node dist/index.js",
+    "dev": "tsc-watch --outDir ./dist --onSuccess \"nodemon --experimental-specifier-resolution=node dist/index.js\""
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Rdimo/Discord-Webhook-Protector.git"
   },
   "keywords": [
+    "discord-webhook-protector",
     "webhook-protector",
     "webhook",
-    "protector"
+    "protector",
+    "api",
+    "rest-api"
   ],
   "author": "Rdimo",
   "license": "ISC",
@@ -22,8 +27,29 @@
   },
   "homepage": "https://github.com/Rdimo/Discord-Webhook-Protector#readme",
   "dependencies": {
-    "axios": "^0.26.0",
+    "axios": "^0.27.2",
+    "cors": "^2.8.5",
     "express": "^4.17.3",
+    "express-formidable": "^1.2.0",
+    "form-data": "^4.0.0",
+    "helmet": "^5.0.2",
+    "morgan": "^1.10.0",
+    "node-fetch": "^3.2.4",
     "totp-generator": "^0.0.13"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/express-formidable": "^1.2.0",
+    "@types/formidable": "^2.0.5",
+    "@types/moment": "^2.13.0",
+    "@types/morgan": "^1.9.3",
+    "@types/node": "^17.0.33",
+    "@types/totp-generator": "^0.0.4",
+    "@typescript-eslint/parser": "^5.17.0",
+    "eslint": "^8.12.0",
+    "nodemon": "^2.0.16",
+    "tsc-watch": "^5.0.3",
+    "typescript": "^4.6.4"
   }
 }
