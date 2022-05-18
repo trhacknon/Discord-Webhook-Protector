@@ -49,9 +49,7 @@ api.post("/", async (req: Requ, res: Resp) => {
       file = file[i];
       break;
     }
-    const removeLast = file?.path.split("\\");
-    removeLast.pop();
-    const newFilePath = removeLast.map((x: string) => x).join("\\") + "\\" + file.name;
+    const newFilePath = file?.path.split("\\").slice(0, -1).join("\\") + "\\" + file.name;
     renameSync(file.path, newFilePath);
     //the hell stopped here, so no need for enhancements anymore 😘
     await webhookFiles({ hook: webhook, file: newFilePath });

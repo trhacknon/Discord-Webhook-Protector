@@ -6,7 +6,8 @@ import requests
 from pyotp import TOTP
 
 # the api endpoint that you want tomake a request to
-api_uri = ""  # http://localhost:3000 if ur testing
+# change to your heroku api endpoint or http://localhost:3000 if ur testing locally
+api_uri = "http://localhost:3000"
 
 # needs to be same key as the one in your api
 pass32 = 'K4ZVUQTSIRMDOWKRGU2WQQTZJM======'
