@@ -1,4 +1,4 @@
-import webhookPayload from "./webhookPayload";
-import webhookFiles from "./webhookFiles";
+import webhookPayload from "./webhookPayload.js";
+import webhookFiles from "./webhookFiles.js";
 
 export { webhookPayload, webhookFiles };

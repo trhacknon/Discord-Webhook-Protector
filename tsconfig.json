@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "module": "esnext",
+    "module": "NodeNext",
     "lib": ["ESNext"],
     "typeRoots": ["node_modules/@types", "types/*"],
     "types": ["node"],
     "outDir": "./dist",
-    "moduleResolution": "Node",
+    "moduleResolution": "NodeNext",
     "resolveJsonModule": true,
     "allowJs": true,
     "checkJs": true,

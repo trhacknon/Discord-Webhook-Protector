@@ -3,7 +3,7 @@ import express from "express";
 import helmet from "helmet";
 import morgan from "morgan";
 import formidableMiddleware from "express-formidable";
-import { port, time } from "../settings";
+import { port, time } from "../settings.js";
 
 const api = express();
 const options = {

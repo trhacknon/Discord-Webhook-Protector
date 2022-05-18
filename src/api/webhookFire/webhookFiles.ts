@@ -1,6 +1,6 @@
 import FormData from "form-data";
 import fs from "fs";
-import type { webhookFileType } from "../../types/types";
+import type { webhookFileType } from "../../types/types.js";
 
 const webhookFiles = async ({ hook, file }: webhookFileType): Promise<void> => {
   try {

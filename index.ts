@@ -1,10 +1,10 @@
 import totp from "totp-generator";
 import { renameSync } from "fs";
-import { webhookFiles, webhookPayload } from "./src/api/webhookFire";
-import { webhook, pass32, time } from "./src/settings";
-import type { fileType, Requ, Resp } from "./src/types/types";
-import RateLimit from "./src/api/ratelimit";
-import api from "./src/api";
+import { webhookFiles, webhookPayload } from "./src/api/webhookFire/index.js";
+import { webhook, pass32, time } from "./src/settings.js";
+import type { fileType, Requ, Resp } from "./src/types/types.js";
+import RateLimit from "./src/api/ratelimit.js";
+import api from "./src/api/index.js";
 import "./src/anti-crash";
 
 async function authorized(key: string | undefined): Promise<boolean> {

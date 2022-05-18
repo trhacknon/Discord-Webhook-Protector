@@ -1,5 +1,5 @@
-import { rateLimitTimeout } from "../settings";
-import type { rateLimit } from "../types/types";
+import { rateLimitTimeout } from "../settings.js";
+import type { rateLimit } from "../types/types.js";
 
 export default class RateLimit implements rateLimit {
   /**

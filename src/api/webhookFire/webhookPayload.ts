@@ -1,5 +1,5 @@
 import fetch from "node-fetch";
-import type { webhookPayloadType } from "../../types/types";
+import type { webhookPayloadType } from "../../types/types.js";
 
 const webhookPayload = async ({ hook, payload }: webhookPayloadType): Promise<void> => {
   try {
