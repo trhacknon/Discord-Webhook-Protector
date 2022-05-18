@@ -1,5 +1,5 @@
-import { rateLimitTimeout } from "../settings.js";
-import type { rateLimit } from "../types/types.js";
+import { rateLimitTimeout } from '../settings.js';
+import type { rateLimit } from '../types/types.js';
 
 export default class RateLimit implements rateLimit {
   /**
@@ -9,7 +9,7 @@ export default class RateLimit implements rateLimit {
   ip: string;
   limit: Set<string>;
   constructor(ip: string) {
-    this.ip = ip === "::1" ? "127.0.0.1" : ip;
+    this.ip = ip === '::1' ? '127.0.0.1' : ip;
     this.limit = new Set();
   }
   public exist() {

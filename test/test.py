@@ -1,6 +1,4 @@
-#
-# >>> For test uploading
-#
+# >>> For testing
 
 import requests
 from pyotp import TOTP
@@ -15,7 +13,7 @@ key = TOTP(pass32).now()
 
 with open(__file__, 'rb') as f:
     r = requests.post(api_uri,
-                      headers={"Authorization": key}, data={"content": "yes"})
+                      headers={"Authorization": key}, data={"content": "it works!"})
     r2 = requests.post(api_uri,
                        headers={"Authorization": key}, files={'upload_file': f})
 

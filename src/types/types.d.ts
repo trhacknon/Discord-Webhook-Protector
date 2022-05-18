@@ -1,8 +1,8 @@
-import { Response, Request, Query } from "express-serve-static-core";
-import { PathLike } from "fs";
+import type { Response, Request, Query } from 'express-serve-static-core';
+import type { PathLike } from 'fs';
 
-export type Resp = Response<any, Record<string, any>, number>;
-export type Requ = Request<{}, any, any, Query, Record<string, any>>;
+export type Resp = Response<any, Record<string, never>, number>;
+export type Requ = Request<{}, any, any, Query, Record<string, unknown>>;
 
 export interface webhookFileType {
   hook: string;

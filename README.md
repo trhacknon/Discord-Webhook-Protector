@@ -19,9 +19,9 @@
 <h4 align="center">
   <a href="https://cheataway.com">🌌・Discord</a>
   ⋮
-  <a href="https://github.com/Rdimo/Discord-Webhook-Protector#setting-up-the-api">🎉・Setup the api</a>
+  <a href="https://github.com/Rdimo/Discord-Webhook-Protector#-%E3%80%A2-hosting-the-api">🎉・Setup the api</a>
   ⋮
-  <a href="https://github.com/Rdimo/Discord-Webhook-Protector#code-example">🎈・Code example</a>
+  <a href="https://github.com/Rdimo/Discord-Webhook-Protector#-%E3%80%A2-code-example">🎈・Code example</a>
 </h4>
 
 <h2 align="center">
@@ -47,7 +47,7 @@ Love ❌ code ✅
 
 ---
 
-### 📁 〢 Setting up the api
+### 📁 〢 Hosting the api
 
 1. Create an account on [Heroku.com](https://heroku.com)
 2. Install [nodejs](https://nodejs.org/en/), [heroku cli](https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up), and [git](https://git-scm.com/)
@@ -67,8 +67,26 @@ $ heroku create
 $ git push heroku main
 ...
 $ heroku ps:scale web=1
-$ heroku open
 ```
+
+> If you get an error when doing `"git push heroku main"` that looks like this
+>
+> ```sh
+> $ first issue error: failed to push some refs to 'https://git.heroku.com/app-name.git'
+> ```
+>
+> Then run `"git push heroku master"` instead | https://github.com/Rdimo/Discord-Webhook-Protector/issues/1
+
+If you make some changes in the code and want to update the api on heroku, simply run `npm run deploy` to push out the updates \
+For testing that your api works, open cmd in the directory and type the following ⇣
+
+```sh-session
+$ cd .\test
+...
+$ py test.py
+```
+
+it should've made a post request to the api uploading itself and sending "it works!" to the webhook
 
 ### ⚙ 〢 Settings
 

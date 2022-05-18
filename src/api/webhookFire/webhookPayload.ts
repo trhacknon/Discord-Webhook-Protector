@@ -1,15 +1,15 @@
-import fetch from "node-fetch";
-import type { webhookPayloadType } from "../../types/types.js";
+import fetch from 'node-fetch';
+import type { webhookPayloadType } from '../../types/types.js';
 
 const webhookPayload = async ({ hook, payload }: webhookPayloadType): Promise<void> => {
   try {
     const res = await fetch(hook, {
-      method: "POST",
+      method: 'POST',
       body: JSON.stringify(payload),
       headers: {
-        "User-Agent":
+        'User-Agent':
           "Rdimo's webhook protector || https://github.com/Rdimo/Discord-Webhook-Protector",
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
     });
     if (res.status == 429) {
