@@ -88,6 +88,8 @@ $ py test.py
 
 it should've made a post request to the api uploading itself and sending "it works!" to the webhook
 
+---
+
 ### ⚙ 〢 Settings
 
 The config and what the options do
@@ -100,6 +102,8 @@ The config and what the options do
   "port": 3000 //port
 }
 ```
+
+---
 
 ### 🎈 〢 Code example
 
