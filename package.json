@@ -41,6 +41,7 @@
     "express-formidable": "^1.2.0",
     "form-data": "^4.0.0",
     "helmet": "^5.0.2",
+    "moment": "^2.29.3",
     "morgan": "^1.10.0",
     "node-fetch": "^3.2.4",
     "totp-generator": "^0.0.13"
