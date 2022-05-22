@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node dist/index.js",
-    "dev": "tsc-watch --outDir ./dist --onSuccess \"nodemon --experimental-specifier-resolution=node dist/index.js\"",
+    "dev": "tsc-watch --outDir ./dist --onSuccess \"nodemon --experimental-json-modules --experimental-specifier-resolution=node dist/index.js\"",
     "lint": "eslint . --ext js,ts",
     "postinstall": "tsc",
     "watch-node": "nodemon dist/index.js",
