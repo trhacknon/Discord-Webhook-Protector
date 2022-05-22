@@ -49,7 +49,7 @@ Love ❌ code ✅
 
 ### 📁 〢 Hosting the api
 
-1. Create an account on [Heroku.com](https://heroku.com)
+1. Create an account on [Heroku.com](https://heroku.com) (Yes all of this is **free**)
 2. Install [nodejs](https://nodejs.org/en/), [heroku cli](https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up), and [git](https://git-scm.com/)
 3. Open [config.json](https://github.com/Rdimo/Discord-Webhook-Protector/blob/main/config.json) and put in your webhook at the top
 4. Open cmd in the directory and type `npm i`
@@ -67,7 +67,11 @@ $ heroku create
 $ git push heroku main
 ...
 $ heroku ps:scale web=1
+...
+$ heroku domains
 ```
+6. Done! After typing `heroku domains` you should get something in the console like **shrouded-fjord-36366.herokuapp.com**. This is your api! Simply replace your webhook in your tools with this link and add the totp key auth and your webhook is now protected and impossible to spam/delete!
+
 
 > If you get an error when doing `"git push heroku main"` that looks like this
 >
@@ -78,6 +82,7 @@ $ heroku ps:scale web=1
 > Then run `"git push heroku master"` instead | https://github.com/Rdimo/Discord-Webhook-Protector/issues/1
 
 If you make some changes in the code and want to update the api on heroku, simply run `npm run deploy` to push out the updates \
+If any bugs occur please report them or try and see if restarting the app by typing `heroku restart` works!
 For testing that your api works, open cmd in the directory and type the following ⇣
 
 ```sh-session

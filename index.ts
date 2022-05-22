@@ -1,5 +1,6 @@
 import totp from 'totp-generator';
-import { renameSync } from 'fs';
+import mv from 'mv';
+import { sep } from 'path';
 import { webhookFiles, webhookPayload } from './src/api/webhookFire/index.js';
 import { webhook, pass32, time } from './src/settings.js';
 import type { fileType, Requ, Resp } from './src/types/types.js';
@@ -49,9 +50,8 @@ api.post('/', async (req: Requ, res: Resp) => {
       file = file[i];
       break;
     }
-    const newFilePath = file?.path.split('\\').slice(0, -1).join('\\') + '\\' + file.name;
-    renameSync(file.path, newFilePath);
-    //the hell stopped here, so no need for enhancements anymore 😘
+    const newFilePath = file?.path.split(sep).slice(0, -1).join(sep) + sep + file.name;
+    mv(file.path, newFilePath, function (err) {});
     await webhookFiles({ hook: webhook, file: newFilePath });
     Authorize(res, ip, 'file');
   }
