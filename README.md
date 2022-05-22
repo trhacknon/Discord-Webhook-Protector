@@ -38,7 +38,7 @@ Love ❌ code ✅
 ```
 > Easy to setup!
 > Configurable!
-> Completely **free** and stays online **24/7**
+> Completely *free* and stays online *24/7*
 > Accepts json, discord embeds and files!
 > Ratelimits unauthorized requests!
 > Accepting only post requests!
@@ -78,17 +78,19 @@ $ git push heroku master
 $ heroku ps:scale web=1
 ...
 $ heroku domains
+...
 ```
 
 8. Done! After typing `heroku domains` you should get something in the console like **shrouded-fjord-36366.herokuapp.com**. This is your api with your undeletable/unspammable webhook!
 
-> If you get an error when doing `"git push heroku master"` that looks like this
->
-> ```sh
-> $ first issue error: failed to push some refs to 'https://git.heroku.com/app-name.git'
-> ```
->
-> Then run `"git push heroku main"` instead | https://github.com/Rdimo/Discord-Webhook-Protector/issues/1
+#### If you get an error when doing `"git push heroku master"` that looks like this
+
+```sh
+$ first issue error: failed to push some refs to 'https://git.heroku.com/app-name.git'
+```
+Then run `"git push heroku main"` instead | https://github.com/Rdimo/Discord-Webhook-Protector/issues/1
+
+ㅤ
 
 If you make some changes in the code and want to update the api on heroku, simply run `npm run deploy` to push out the updates \
 If any bugs occur please report them or try and see if restarting the app by typing `heroku restart` works!
@@ -112,7 +114,7 @@ The config and what the options do
 {
   "webhook": "https://discord.com/api/webhooks/0123456789/abcdefghijklmnopqrstuvwxyz", //your discord webhook
   "pass32": "K4ZVUQTSIRMDOWKRGU2WQQTZJM======" /*a key encoded in base32, use the keyGen in test or see https://github.com/bellstrand/totp-generator#how-to-use for more*/,
-  "rateLimitTimeout": 12000, //amount of milliseconds an ip gets ratelimited
+  "rateLimitTimeout": 12000, //amount of milliseconds an ip gets ratelimited (Default: 30000 --> 30 seconds)
   "port": 3000 //port
 }
 ```
