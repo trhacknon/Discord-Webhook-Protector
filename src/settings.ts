@@ -1,5 +1,5 @@
 import moment from 'moment';
-import config from '../config.json';
+import config from '../config.json' assert { type: 'json' };
 
 const webhook = config.webhook;
 const pass32 = config.pass32;
