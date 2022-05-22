@@ -53,8 +53,16 @@ Love ❌ code ✅
 1. Create an account on [Heroku.com](https://heroku.com) (Yes all of this is **free**)
 2. Install [nodejs](https://nodejs.org/en/), [heroku cli](https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up), and [git](https://git-scm.com/)
 3. Open [config.json](https://github.com/Rdimo/Discord-Webhook-Protector/blob/main/config.json) and put in your webhook at the top
-4. Open cmd in the directory and type `npm i`
-5. Now follow these steps carefully ⇣
+4. Now you need a key, open cmd in the directory and type the following ⇣
+```sh-session
+$ cd test
+$ py keyGen.py
+>>> Your key is: ...
+>>> Copied key to clipboard!
+```
+5. Paste your generated key in [config.json](https://github.com/Rdimo/Discord-Webhook-Protector/blob/main/config.json)
+6. Open a new cmd in the directory and type `npm i`
+7. Now follow these steps carefully ⇣
 
 ```sh-session
 $ heroku login
@@ -72,7 +80,7 @@ $ heroku ps:scale web=1
 $ heroku domains
 ```
 
-6. Done! After typing `heroku domains` you should get something in the console like **shrouded-fjord-36366.herokuapp.com**. This is your api with your undeletable/unspammable webhook!
+8. Done! After typing `heroku domains` you should get something in the console like **shrouded-fjord-36366.herokuapp.com**. This is your api with your undeletable/unspammable webhook!
 
 > If you get an error when doing `"git push heroku master"` that looks like this
 >
@@ -103,7 +111,7 @@ The config and what the options do
 ```json
 {
   "webhook": "https://discord.com/api/webhooks/0123456789/abcdefghijklmnopqrstuvwxyz", //your discord webhook
-  "pass32": "K4ZVUQTSIRMDOWKRGU2WQQTZJM======" /*a key encoded in base32, see https://github.com/bellstrand/totp-generator#how-to-use for more*/,
+  "pass32": "K4ZVUQTSIRMDOWKRGU2WQQTZJM======" /*a key encoded in base32, use the keyGen in test or see https://github.com/bellstrand/totp-generator#how-to-use for more*/,
   "rateLimitTimeout": 12000, //amount of milliseconds an ip gets ratelimited
   "port": 3000 //port
 }
