@@ -38,7 +38,8 @@ Love ❌ code ✅
 ```
 > Easy to setup!
 > Configurable!
-> Accepts both embeds and files!
+> Completely **free** and stays online **24/7**
+> Accepts json, discord embeds and files!
 > Ratelimits unauthorized requests!
 > Accepting only post requests!
 > Impossible to delete webhook
@@ -71,7 +72,7 @@ $ heroku ps:scale web=1
 $ heroku domains
 ```
 
-6. Done! After typing `heroku domains` you should get something in the console like **shrouded-fjord-36366.herokuapp.com**. This is your api! Simply replace your webhook in your tools with this link and add the totp key auth and your webhook is now protected and impossible to spam/delete!
+6. Done! After typing `heroku domains` you should get something in the console like **shrouded-fjord-36366.herokuapp.com**. This is your api with your undeletable/unspammable webhook!
 
 > If you get an error when doing `"git push heroku master"` that looks like this
 >
