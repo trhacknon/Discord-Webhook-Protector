@@ -38,7 +38,7 @@ Love ❌ code ✅
 ```
 > Easy to setup!
 > Configurable!
-> Completely **free** and stays online **24/7**
+> Completely *free* and stays online *24/7*
 > Accepts json, discord embeds and files!
 > Ratelimits unauthorized requests!
 > Accepting only post requests!
@@ -70,6 +70,7 @@ $ git push heroku master
 $ heroku ps:scale web=1
 ...
 $ heroku domains
+...
 ```
 
 6. Done! After typing `heroku domains` you should get something in the console like **shrouded-fjord-36366.herokuapp.com**. This is your api with your undeletable/unspammable webhook!
