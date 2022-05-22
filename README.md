@@ -43,7 +43,7 @@ Love ❌ code ✅
 > Ratelimits unauthorized requests!
 > Accepting only post requests!
 > Impossible to delete webhook
-> Webhook protected by totp so webhook can't be spammed even if they http debug!
+> Webhook protected by totp so very hard to spam webhook even if they http debug!
 ```
 
 ---

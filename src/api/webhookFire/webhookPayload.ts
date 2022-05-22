@@ -7,8 +7,6 @@ const webhookPayload = async ({ hook, payload }: webhookPayloadType): Promise<vo
       method: 'POST',
       body: JSON.stringify(payload),
       headers: {
-        'User-Agent':
-          "Rdimo's webhook protector || https://github.com/Rdimo/Discord-Webhook-Protector",
         'Content-Type': 'application/json',
       },
     });
@@ -18,12 +16,10 @@ const webhookPayload = async ({ hook, payload }: webhookPayloadType): Promise<vo
       const waitUntil = data.retry_after;
       setTimeout(() => webhookPayload({ hook, payload }), waitUntil);
     } else if (res.status !== (204 || 200)) {
-      throw new Error(
-        `Error sending webhook: ${res.status} status code. Response: ${await res.text()}`,
-      );
+      throw new Error(`Error sending webhook: ${res.status} status code. Response: ${await res.text()}`);
     }
   } catch (err: any) {
-    throw new Error(err.message);
+    throw new Error(err.stack);
   }
 };
 
