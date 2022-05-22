@@ -75,13 +75,14 @@ $ heroku domains
 
 6. Done! After typing `heroku domains` you should get something in the console like **shrouded-fjord-36366.herokuapp.com**. This is your api with your undeletable/unspammable webhook!
 
-> If you get an error when doing `"git push heroku master"` that looks like this
->
-> ```sh
-> $ first issue error: failed to push some refs to 'https://git.heroku.com/app-name.git'
-> ```
->
-> Then run `"git push heroku main"` instead | https://github.com/Rdimo/Discord-Webhook-Protector/issues/1
+#### If you get an error when doing `"git push heroku master"` that looks like this
+
+```sh
+$ first issue error: failed to push some refs to 'https://git.heroku.com/app-name.git'
+```
+Then run `"git push heroku main"` instead | https://github.com/Rdimo/Discord-Webhook-Protector/issues/1
+
+ㅤ
 
 If you make some changes in the code and want to update the api on heroku, simply run `npm run deploy` to push out the updates \
 If any bugs occur please report them or try and see if restarting the app by typing `heroku restart` works!
