@@ -73,7 +73,7 @@ $ git commit -m "first Webhook protector api commit"
 ...
 $ heroku create
 ...
-$ git push heroku master
+$ git push heroku main
 ...
 $ heroku ps:scale web=1
 ...
@@ -83,12 +83,12 @@ $ heroku domains
 
 8. Done! After typing `heroku domains` you should get something in the console like **shrouded-fjord-36366.herokuapp.com**. This is your api with your undeletable/unspammable webhook!
 
-#### If you get an error when doing `"git push heroku master"` that looks like this
+#### If you get an error when doing `"git push heroku main"` that looks like this
 
 ```sh
 $ first issue error: failed to push some refs to 'https://git.heroku.com/app-name.git'
 ```
-Then run `"git push heroku main"` instead | https://github.com/Rdimo/Discord-Webhook-Protector/issues/1
+Then run `"git push heroku master"` instead | https://github.com/Rdimo/Discord-Webhook-Protector/issues/1
 
 ㅤ
 
