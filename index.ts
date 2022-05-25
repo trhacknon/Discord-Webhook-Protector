@@ -8,20 +8,20 @@ import RateLimit from './src/api/ratelimit.js';
 import api from './src/api/index.js';
 import './src/anti-crash.js';
 
-async function authorized(key: string | undefined): Promise<boolean> {
+function authorized(key: string | undefined): boolean {
   //check if key is correct
   if (key && key === totp(pass32)) return true;
   return false;
 }
 
-async function setStatus(res: Resp, code: number, text?: string): Promise<void> {
+function setStatus(res: Resp, code: number, text?: string): void {
   //respond to the request
   res.status(code).send(text || 'ok');
 }
 
 const Authorize = async (res: Resp, ip: string, type: 'file' | 'data') => {
   //respond with ok statuscode and console log that data/file has been sent
-  await setStatus(res, 200);
+  setStatus(res, 200);
   console.log(`${time} Authorized IP: ${ip === '::1' ? '127.0.0.1' : ip}, sent ${type} to webhook`);
 };
 
@@ -31,7 +31,7 @@ api.post('/', async (req: Requ, res: Resp) => {
   const key = req.headers.authorization;
   const rateLimit = new RateLimit(ip);
 
-  if (!(await authorized(key))) {
+  if (!authorized(key)) {
     //ratelimit if the authorization or request method is incorrect
     if (rateLimit.exist()) return setStatus(res, 429);
     rateLimit.timeout();
