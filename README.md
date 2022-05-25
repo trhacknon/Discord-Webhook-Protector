@@ -1,5 +1,7 @@
+
+
 <h1 align="center">
-  Discord Webhook Protector 🔰
+  <a id="top"></a>Discord Webhook Protector 🔰
 </h1>
 
 <p align="center"> 
@@ -16,13 +18,6 @@
   <img src="https://img.shields.io/github/forks/Rdimo/Discord-Webhook-Protector?color=444444&label=Forks&style=flat-square"/>
 </p>
 
-<h4 align="center">
-  <a href="https://cheataway.com">🌌・Discord</a>
-  ⋮
-  <a href="https://github.com/Rdimo/Discord-Webhook-Protector#-%E3%80%A2-hosting-the-api">🎉・Setup the api</a>
-  ⋮
-  <a href="https://github.com/Rdimo/Discord-Webhook-Protector#-%E3%80%A2-code-example">🎈・Code example</a>
-</h4>
 
 <h2 align="center">
   Discord-Webhook-Protector was made by
@@ -33,7 +28,19 @@ Love ❌ code ✅
 
 ---
 
-## 🔰 〢 Features
+
+## <a id="content"></a> ℹ️ 〢 Content
+
+- [🔰・Features](#features)
+- [🌌・Discord](https://cheataway.com)
+- [🎉・Setup the Api with Heroku](#heroku)
+- [🎉・Setup the Api with Render](#render)
+- [🧪・Testing the Api](#testing)
+- [🟢・Keeping It alive 24/7](#alive)
+- [⚙ ・Settings](#settings)
+- [🎈・Code example](#code-example)
+
+## <a id="features"></a>🔰 〢 Features
 
 ```
 > Easy to setup!
@@ -45,10 +52,9 @@ Love ❌ code ✅
 > Impossible to delete webhook
 > Webhook protected by totp so very hard to spam webhook even if they http debug!
 ```
-
 ---
 
-### 📁 〢 Hosting the api
+### <a id="heroku"></a>📁 〢 Hosting the API with Heroku
 
 1. Create an account on [Heroku.com](https://heroku.com) (Yes all of this is **free**)
 2. Install [nodejs](https://nodejs.org/en/), [heroku cli](https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up), and [git](https://git-scm.com/)
@@ -94,7 +100,30 @@ Then run `"git push heroku master"` instead | https://github.com/Rdimo/Discord-W
 
 If you make some changes in the code and want to update the api on heroku, simply run `npm run deploy` to push out the updates \
 If any bugs occur please report them or try and see if restarting the app by typing `heroku restart` works!
-For testing that your api works, open cmd in the directory and type the following ⇣
+<center><a href=#content> Back To Content </a> </center>
+
+---
+
+### <a id="render"></a>📁 〢 Hosting the API with Render
+
+1. Setup an account on [Render](https://dashboard.render.com/register)
+2. [Fork](https://github.com/Rdimo/Discord-Webhook-Protector/fork) This Repo **(Dont Forget to Make it Private And Edit the config.js File)**
+3. Go to [This](https://dashboard.render.com/select-repo?type=web) Link and connect your GitHub Account
+4. Select the repo you just made 
+  ![image](https://user-images.githubusercontent.com/86944806/170194672-2a21aed0-cc1b-4efb-88d5-c835034c2e70.png)
+5. On the next screen enter a uniqe name for it **(this name will be in your api)**
+6. Select **Node** as your environment
+![image](https://user-images.githubusercontent.com/86944806/170195377-fbc7a054-5b8b-4255-aaea-5a209d6c65af.png)
+7. Scroll down and click on ![image](https://user-images.githubusercontent.com/86944806/170195784-9df18d5f-c8e5-4694-bafc-57e59fe0ee0e.png)
+8. Thats it! It will build it in some time now **(Approx 5 mins)**
+9. Your api url should look like this **(https://youruninqename.onrender.com)**
+![image](https://user-images.githubusercontent.com/86944806/170196327-c44fa2c1-619f-43c4-b5aa-a121a98493bf.png)
+
+<center><a href=#content> Back To Content </a> </center>
+
+### <a id="testing"></a> 🧪〢Testing the Api
+
+For testing that your api works, open test folder and edit the test .py file by putting your api url and passsword then open cmd in the directory and type the following ⇣
 
 ```sh-session
 $ cd .\test
@@ -102,11 +131,31 @@ $ cd .\test
 $ py test.py
 ```
 
-it should've made a post request to the api uploading itself and sending "it works!" to the webhook
+It should've made a post request to the api uploading itself and sending "it works!" to the webhook
+<center><a href=#content> Back To Content </a> </center>
 
 ---
 
-### ⚙ 〢 Settings
+### <a id="alive"></a>🟢〢Keeping It Alive 24/7
+
+Free hosting will sleep your API after inactivity. It is 15 mins for Render. Now ofc we aren't gonna keep using our webhook so we can use a site like [Statuscake](statuscake.com) which is free.
+
+***Note:** Heroku gives only 550 hours for free in a month whereas Render gives 750 hours (There are 744 hours in a month). So If u use this method on heroku then your api will be offline for last 8 days of the month. (Unless You have more hours on heroku by entering your credit card or buying) And so I recommend you use Render the host the API*
+
+1. Sign up on [Statuscake](https://app.statuscake.com/Try)
+2. Create a new [UpTime Test](https://app.statuscake.com/AddSite.php)
+![image](https://user-images.githubusercontent.com/86944806/170201838-fc68aa1a-a554-4786-856b-ccf6b7d6170a.png)
+3. Head down to ![image](https://user-images.githubusercontent.com/86944806/170203552-041cf979-c32b-4ed6-9051-f6d738949027.png) and follow what I've done. **(Don't Forget to❌the code 401)**
+![image](https://user-images.githubusercontent.com/86944806/170203426-ed45ac96-d46c-4176-b977-e3164c57e6e9.png)
+4. Scroll down and click on ![image](https://user-images.githubusercontent.com/86944806/170204712-47185645-0e81-4538-9829-5fca1ffa9e20.png)
+5. Add if u want though its not needed **(click ok if u don't want to add)**
+![image](https://user-images.githubusercontent.com/86944806/170204283-6de3d140-ef94-4cbf-88e0-1ad8da0872b8.png)
+6. Thats it! Your webhook is now gonna be live 24/7
+<center><a href=#content> Back To Content </a> </center>
+
+---
+
+### <a id="settings"></a> ⚙ 〢 Settings
 
 The config and what the options do
 
@@ -118,10 +167,11 @@ The config and what the options do
   "port": 3000 //port
 }
 ```
+<center><a href=#content> Back To Content </a> </center>
 
 ---
 
-### 🎈 〢 Code example
+### <a id="code-example"></a>🎈 〢 Code example
 
 Example use of the api hosted on heroku
 
@@ -166,3 +216,5 @@ os.remove(_file) #delete traces
 ```
 
 > Thank you [xrevix](https://github.com/xrevix) for bug testing and reporting all of them 😘
+
+<p align="center"><a href=#top>Back to Top</a></p>
