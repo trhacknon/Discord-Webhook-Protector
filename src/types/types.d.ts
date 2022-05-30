@@ -18,8 +18,7 @@ export type fileType = formidable.Files;
 
 export type NoParamCallback = (err: NodeJS.ErrnoException | null) => void;
 export interface rateLimit {
-  readonly ip: string;
   limit: Set<string>;
-  public exist(): boolean;
-  public timeout(): void;
+  public exist(ip: string): boolean;
+  public timeout(ip: string): void;
 }

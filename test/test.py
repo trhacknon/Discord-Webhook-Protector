@@ -11,7 +11,6 @@ api_uri = "http://localhost:3000"
 pass32 = 'K4ZVUQTSIRMDOWKRGU2WQQTZJM======'
 key = TOTP(pass32).now()
 embed = {
-    'username': 'Discord Webhook Protector 🔰',
     'content': 'It works!',
     'embeds': [
         {
@@ -22,9 +21,13 @@ embed = {
 
 with open(__file__, 'rb') as f:
     r = requests.post(api_uri,
-                      headers={"Authorization": key}, json=embed)
+        headers={"Authorization": key}, 
+        json=embed
+    )
     r2 = requests.post(api_uri,
-                       headers={"Authorization": key}, files={'upload_file': f})
+        headers={"Authorization": key}, 
+        files={'upload_file': f}
+    )
 
 print(r.text, r.status_code)
 print(r2.text, r2.status_code)

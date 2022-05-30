@@ -6,31 +6,29 @@ export default class RateLimit implements rateLimit {
    * Ratelimits unauthorized ip's
    * @access public
    **/
-  ip: string;
   limit: Set<string>;
-  constructor(ip: string) {
-    this.ip = ip === '::1' ? '127.0.0.1' : ip;
+  constructor() {
     this.limit = new Set();
   }
-  public exist() {
+
+  public exist(ip: string): boolean {
     /**
      * if ip is already ratelimited
      *
      * @returns {boolean}
      */
-    if (this.limit.has(this.ip)) return true;
+    if (this.limit.has(ip)) return true;
     return false;
   }
-  public timeout() {
+  public timeout(ip: string): void {
     /**
-     * sets a rateLimitTimeout or 30 sec ratelimit on the ip
+     * sets a 30 sec ratelimit on the ip or the rateLimitTimeout amount in config.json
      *
      * @returns {void}
      */
-    this.limit.add(this.ip);
-    console.log(`ratelimited ${this.ip}`);
+    this.limit.add(ip);
     setTimeout(() => {
-      this.limit.delete(this.ip);
+      this.limit.delete(ip);
     }, rateLimitTimeout || 30000);
   }
 }
