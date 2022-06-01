@@ -42,7 +42,7 @@ Love ❌ code ✅
 
 ## <a id="features"></a>🔰 〢 Features
 
-```md
+```
 > Easy to setup!
 > Configurable!
 > Completely *free* and stays online *24/7*
