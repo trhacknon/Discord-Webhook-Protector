@@ -29,7 +29,7 @@ Love ❌ code ✅
 ---
 
 
-## <a id="content"></a> ℹ️ 〢 Content
+## <a id="content"></a>🌐 〢 Content
 
 - [🔰・Features](#features)
 - [🌌・Discord](https://cheataway.com/invite)
