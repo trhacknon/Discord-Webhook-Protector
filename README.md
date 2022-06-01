@@ -32,7 +32,7 @@ Love ❌ code ✅
 ## <a id="content"></a> ℹ️ 〢 Content
 
 - [🔰・Features](#features)
-- [🌌・Discord](https://cheataway.com)
+- [🌌・Discord](https://cheataway.com/invite)
 - [🎉・Setup the Api with Heroku](#heroku)
 - [🎉・Setup the Api with Render](#render)
 - [🧪・Testing the Api](#testing)
