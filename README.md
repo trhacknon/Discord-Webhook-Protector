@@ -163,7 +163,7 @@ The config and what the options do
 {
   "webhook": "https://discord.com/api/webhooks/0123456789/abcdefghijklmnopqrstuvwxyz", //your discord webhook
   "pass32": "K4ZVUQTSIRMDOWKRGU2WQQTZJM======" /*a key encoded in base32, use the keyGen in ./test or see https://github.com/bellstrand/totp-generator#how-to-use for more*/,
-  "ratelimitOnOff": true, //if you want it to ratelimit unauthorized requests or not
+  "ratelimit": true, //if you want it to ratelimit unauthorized requests or not
   "rateLimitTimeout": 30000, //amount of milliseconds an ip gets ratelimited (Default: 30000 --> 30 seconds)
   "port": 3000 //port
 }
