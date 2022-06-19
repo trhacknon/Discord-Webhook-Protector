@@ -14,7 +14,7 @@
     "deploy": "git add . && git commit -m Heroku && git push heroku master"
   },
   "engines": {
-    "node": ">=14.17.0"
+    "node": ">=16.14.2"
   },
   "repository": {
     "type": "git",
