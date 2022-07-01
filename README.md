@@ -1,4 +1,4 @@
-
+W
 
 <h1 align="center">
   <a id="top"></a>Discord Webhook Protector 🔰
@@ -6,16 +6,16 @@
 
 <p align="center"> 
   <kbd>
-<img src="https://raw.githubusercontent.com/Rdimo/images/master/Discord-Webhook-Protector/Discord-Webhook-Protector.png"></img>
+<img src="https://raw.githubusercontent.com/trhacknon/images/master/Discord-Webhook-Protector/Discord-Webhook-Protector.png"></img>
   </kbd>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/github/languages/top/Rdimo/Discord-Webhook-Protector?style=flat-square"/>
-  <img src="https://img.shields.io/github/last-commit/Rdimo/Discord-Webhook-Protector?style=flat-square"/>
+  <img src="https://img.shields.io/github/languages/top/trhacknon/Discord-Webhook-Protector?style=flat-square"/>
+  <img src="https://img.shields.io/github/last-commit/trhacknon/Discord-Webhook-Protector?style=flat-square"/>
   <img src="https://sonarcloud.io/api/project_badges/measure?project=Rdimo_Discord-Webhook-Protector&metric=ncloc"/>
-  <img src="https://img.shields.io/github/stars/Rdimo/Discord-Webhook-Protector?color=444444&label=Stars&style=flat-square"/>
-  <img src="https://img.shields.io/github/forks/Rdimo/Discord-Webhook-Protector?color=444444&label=Forks&style=flat-square"/>
+  <img src="https://img.shields.io/github/stars/trhacknon/Discord-Webhook-Protector?color=444444&label=Stars&style=flat-square"/>
+  <img src="https://img.shields.io/github/forks/trhacknon/Discord-Webhook-Protector?color=444444&label=Forks&style=flat-square"/>
 </p>
 
 
@@ -58,7 +58,7 @@ Love ❌ code ✅
 
 1. Create an account on [Heroku.com](https://heroku.com) (Yes all of this is **free**)
 2. Install [nodejs](https://nodejs.org/en/), [heroku cli](https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up), and [git](https://git-scm.com/)
-3. Open [config.json](https://github.com/Rdimo/Discord-Webhook-Protector/blob/main/config.json) and put in your webhook at the top
+3. Open [config.json](https://github.com/trhacknon/Discord-Webhook-Protector/blob/main/config.json) and put in your webhook at the top
 4. Now you need a key, open cmd in the directory and type the following ⇣
 ```sh-session
 $ cd test
@@ -66,7 +66,7 @@ $ py keyGen.py
 >>> Your key is: ...
 >>> Copied key to clipboard!
 ```
-5. Paste your generated key in [config.json](https://github.com/Rdimo/Discord-Webhook-Protector/blob/main/config.json)
+5. Paste your generated key in [config.json](https://github.com/trhacknon/Discord-Webhook-Protector/blob/main/config.json)
 6. Open a new cmd in the directory and type `npm i`
 7. Now follow these steps carefully ⇣
 
@@ -94,7 +94,7 @@ $ heroku domains
 ```sh
 $ first issue error: failed to push some refs to 'https://git.heroku.com/app-name.git'
 ```
-Then run `"git push heroku master"` instead | https://github.com/Rdimo/Discord-Webhook-Protector/issues/1
+Then run `"git push heroku master"` instead | https://github.com/trhacknon/Discord-Webhook-Protector/issues/1
 
 ㅤ
 
@@ -107,7 +107,7 @@ If any bugs occur please report them or try and see if restarting the app by typ
 ### <a id="render"></a>📁 〢 Hosting the API with Render
 
 1. Setup an account on [Render](https://dashboard.render.com/register)
-2. [Fork](https://github.com/Rdimo/Discord-Webhook-Protector/fork) This Repo **(Dont Forget to Make it Private And Edit the config.js File)**
+2. [Fork](https://github.com/trhacknon/Discord-Webhook-Protector/fork) This Repo **(Dont Forget to Make it Private And Edit the config.js File)**
 3. Go to [This](https://dashboard.render.com/select-repo?type=web) Link and connect your GitHub Account
 4. Select the repo you just made 
   ![image](https://user-images.githubusercontent.com/86944806/170194672-2a21aed0-cc1b-4efb-88d5-c835034c2e70.png)
